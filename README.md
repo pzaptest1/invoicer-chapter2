@@ -184,3 +184,22 @@ $ curl http://172.17.0.2:8080/invoice/1
 {"ID":1,"CreatedAt":"2016-05-21T15:33:21.855874Z","UpdatedAt":"2016-05-21T15:33:21.855874Z","DeletedAt":null,"is_paid":false,"amount":1664,"payment_date":"0001-01-01T00:00:00Z","due_date":"2016-05-07T23:00:00Z","charges":[{"ID":1,"CreatedAt":"2016-05-21T15:33:21.8637Z","UpdatedAt":"2016-05-21T15:33:21.8637Z","DeletedAt":null,"invoice_id":1,"type":"blood
 work","amount":1664,"description":"blood work"}]}
 ```
+
+
+Getting it to work on a mac
+----------------------------
+
+docker run -p 127.0.0.1:80:8080/tcp -it pzaptest1/invoicer-chapter2
+
+
+curl http://localhost:80/invoice/1
+{"ID":1,"CreatedAt":"2016-05-21T15:33:21.855874Z","UpdatedAt":"2016-05-21T15:33:21.855874Z","DeletedAt":null,"is_paid":false,"amount":1664,"payment_date":"0001-01-01T00:00:00Z","due_date":"2016-05-07T23:00:00Z","charges":[{"ID":1,"CreatedAt":"2016-05-21T15:33:21.8637Z","UpdatedAt":"2016-05-21T15:33:21.8637Z","DeletedAt":null,"invoice_id":1,"type":"blood
+work","amount":1664,"description":"blood work"}]}
+
+Macs-MBP:~ macuser$ curl 127.0.0.1:80/__version__
+{
+"source": "https://github.com/Securing-DevOps/invoicer",
+"version": "20180614.0-92f47c3",
+"commit": "92f47c3d3dd24e41c8b38adbb86b2407143c9dc9",
+"build": "https://circleci.com/gh/Securing-DevOps/invoicer/"
+}
